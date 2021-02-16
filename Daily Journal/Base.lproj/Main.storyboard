@@ -11,7 +11,7 @@
         <!--Daily Journal-->
         <scene sceneID="LTM-Ou-7SX">
             <objects>
-                <tableViewController id="Afc-Fa-6ef" sceneMemberID="viewController">
+                <tableViewController id="Afc-Fa-6ef" customClass="EntriesTableViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fOY-H1-csO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="eZC-Dl-Doz"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="pqe-yC-YSW">
                             <connections>
-                                <segue destination="pIU-EW-PHR" kind="show" id="0WH-5M-UY7"/>
+                                <segue destination="pIU-EW-PHR" kind="show" identifier="segueToEntry" id="0WH-5M-UY7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="234.78260869565219" y="-1547.5446428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="23Y-cQ-LVz">
             <objects>
-                <viewController id="pIU-EW-PHR" sceneMemberID="viewController">
+                <viewController id="pIU-EW-PHR" customClass="EntryViewController" customModule="Daily_Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JtX-nV-VVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,11 +73,14 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="vvA-e6-abd">
                                 <rect key="frame" x="47" y="108" width="320" height="216"/>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="pIU-EW-PHR" eventType="valueChanged" id="xcn-DL-adb"/>
+                                </connections>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Av5-bF-Qpo">
                                 <rect key="frame" x="20" y="344" width="374" height="498"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -97,8 +100,16 @@
                     <navigationItem key="navigationItem" id="6QL-hQ-WYG">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="trash" id="PaG-cU-2lR">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="deleteEntry:" destination="pIU-EW-PHR" id="g8E-zn-TTC"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="bIy-w6-WHH" id="Kb7-3Y-R6w"/>
+                        <outlet property="datePicker" destination="vvA-e6-abd" id="bAw-H1-ujq"/>
+                        <outlet property="textView" destination="Av5-bF-Qpo" id="zeT-de-5Qb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQ3-Qz-2We" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
