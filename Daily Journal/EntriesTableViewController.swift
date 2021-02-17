@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EntriesTableViewController: UITableViewController {
     
@@ -17,7 +18,10 @@ class EntriesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
-            if let entriesFromCoreData = try? context.fetch(Entry.fetchRequest()) as? [Entry]{
+            let request: NSFetchRequest<Entry> = Entry.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+            
+            if let entriesFromCoreData = try? context.fetch(request){
                 entries = entriesFromCoreData
                 self.tableView.reloadData()
             }
@@ -38,15 +42,16 @@ class EntriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell()
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell"){
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell") as? EntryTableViewCell {
             let entry = entries[indexPath.row]
-            cell.textLabel?.text = entry.text
+            cell.entryTextLabel.text = entry.text
+            cell.monthLabel.text = entry.month()
+            cell.dayLabel.text = entry.day()
             return cell
         } else {
             return UITableViewCell()
         }
-    }
+    }   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let entryVC = segue.destination as? EntryViewController {

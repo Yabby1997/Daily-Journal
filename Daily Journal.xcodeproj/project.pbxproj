@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D7E8E5A25DCF5B1003C7BF2 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E8E5925DCF5B1003C7BF2 /* EntryTableViewCell.swift */; };
 		1DA610B425DAD2C100D9FB66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA610B325DAD2C100D9FB66 /* AppDelegate.swift */; };
 		1DA610B625DAD2C100D9FB66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA610B525DAD2C100D9FB66 /* SceneDelegate.swift */; };
 		1DA610BB25DAD2C100D9FB66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA610B925DAD2C100D9FB66 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D7E8E5925DCF5B1003C7BF2 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 		1DA610B025DAD2C100D9FB66 /* Daily Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA610B325DAD2C100D9FB66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA610B525DAD2C100D9FB66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				1DA610B925DAD2C100D9FB66 /* Main.storyboard */,
 				1DBAF61825DB5E7000A65A48 /* EntryViewController.swift */,
 				1DBAF61525DB5DF100A65A48 /* EntriesTableViewController.swift */,
+				1D7E8E5925DCF5B1003C7BF2 /* EntryTableViewCell.swift */,
 				1DA610BF25DAD2C400D9FB66 /* Assets.xcassets */,
 				1DA610C125DAD2C400D9FB66 /* LaunchScreen.storyboard */,
 				1DA610C425DAD2C400D9FB66 /* Info.plist */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7E8E5A25DCF5B1003C7BF2 /* EntryTableViewCell.swift in Sources */,
 				1DA610B425DAD2C100D9FB66 /* AppDelegate.swift in Sources */,
 				1DBAF61F25DB7EEF00A65A48 /* Entry+CoreDataProperties.swift in Sources */,
 				1DA610B625DAD2C100D9FB66 /* SceneDelegate.swift in Sources */,
