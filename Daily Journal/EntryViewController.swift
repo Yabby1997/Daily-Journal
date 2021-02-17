@@ -42,7 +42,6 @@ class EntryViewController: UIViewController, UITextViewDelegate {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            print(keyboardHeight)
             
             bottomConstraint.constant = keyboardHeight
         }

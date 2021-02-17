@@ -17,12 +17,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f5K-ti-koq">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="142" id="f5K-ti-koq">
+                                <rect key="frame" x="0.0" y="28" width="414" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f5K-ti-koq" id="dHt-JR-U5I">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa5-9Y-H9X">
+                                            <rect key="frame" x="20" y="11" width="72" height="41"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="60c-xd-6bi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7T-YU-j5p">
+                                            <rect key="frame" x="36.5" y="90" width="39" height="41"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <color key="textColor" systemColor="systemRedColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-XL-Bcj">
+                                            <rect key="frame" x="112" y="11" width="272" height="120"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bnu-XL-Bcj" firstAttribute="leading" secondItem="wa5-9Y-H9X" secondAttribute="trailing" constant="20" id="0lg-fw-BW5"/>
+                                        <constraint firstItem="Q7T-YU-j5p" firstAttribute="centerX" secondItem="wa5-9Y-H9X" secondAttribute="centerX" id="Amv-0Z-HpB"/>
+                                        <constraint firstItem="bnu-XL-Bcj" firstAttribute="top" secondItem="dHt-JR-U5I" secondAttribute="topMargin" id="LpW-dM-dAo"/>
+                                        <constraint firstItem="wa5-9Y-H9X" firstAttribute="leading" secondItem="dHt-JR-U5I" secondAttribute="leadingMargin" id="ONs-Ti-LGP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bnu-XL-Bcj" secondAttribute="bottom" id="Q4J-He-hAj"/>
+                                        <constraint firstItem="wa5-9Y-H9X" firstAttribute="top" secondItem="dHt-JR-U5I" secondAttribute="topMargin" id="T8I-nr-3Dt"/>
+                                        <constraint firstItem="Q7T-YU-j5p" firstAttribute="bottom" secondItem="dHt-JR-U5I" secondAttribute="bottomMargin" id="ehe-SN-whT"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bnu-XL-Bcj" secondAttribute="trailing" id="pze-aW-BqP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
